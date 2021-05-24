@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Street Bold';
+  font-weight: bold;
+  src: url('./Strebold.ttf');
+}
+
+@font-face {
+  font-family: 'Street Bold';
+  font-weight: medium;
+  src: url('./Stresbld.ttf');
+}
+
+@font-face {
+  font-family: 'Street Bold';
+  font-weight: normal;
+  src: url('./Strelght.ttf');
+}
