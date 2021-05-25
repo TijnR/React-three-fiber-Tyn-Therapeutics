@@ -8,7 +8,7 @@ import charles from '../images/charles.png'
 import abbvie from '../images/abbvie.png'
 
 const Sbanner = styled.section`
-  padding: 75px 20px;
+  padding: 75px 40px;
   background-color: ${colors.primary};
 `
 

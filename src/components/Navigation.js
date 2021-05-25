@@ -7,8 +7,9 @@ const SHeader = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  padding: 25px 20px;
+  padding: 25px 40px;
   width: 100%;
+  z-index: 10;
   backdrop-filter: blur(2px);
 `
 

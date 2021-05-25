@@ -7,7 +7,7 @@ function Section({ children, bgcolor, align }) {
     height: 100vh;
     width: 100%;
     background-color: ${bgcolor || '#ffffff'};
-    padding: 200px 20px;
+    padding: 200px 40px;
     display: flex;
     flex-direction: column;
   `
