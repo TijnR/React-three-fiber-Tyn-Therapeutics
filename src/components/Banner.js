@@ -69,16 +69,16 @@ function Banner() {
         <Stitle>Our R&D Partners</Stitle>
         <SclientsContainer>
           <SimageContainer>
-            <img src={nyu} style={{ width: '300px' }} />
+            <img src={nyu} alt="nyu" style={{ width: '300px' }} />
           </SimageContainer>
           <SimageContainer>
-            <img src={pfizer} style={{ width: '100px' }} />
+            <img src={pfizer} alt="pfizer" style={{ width: '100px' }} />
           </SimageContainer>
           <SimageContainer>
-            <img src={charles} style={{ width: '200px' }} />
+            <img src={charles} alt="charles" style={{ width: '200px' }} />
           </SimageContainer>
           <SimageContainer>
-            <img src={abbvie} style={{ width: '200px' }} />
+            <img src={abbvie} alt="abbvie" style={{ width: '200px' }} />
           </SimageContainer>
         </SclientsContainer>
       </Sinner>
