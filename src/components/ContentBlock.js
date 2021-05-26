@@ -8,6 +8,7 @@ const SBlock = styled.div`
   flex-direction: column;
   max-width: 500px;
   width: 100%;
+  z-index: 10;
 `
 
 const SsubTitle = styled.h3`
@@ -28,6 +29,10 @@ const Stitle = styled.h1`
   text-transform: capitalize;
   letter-spacing: -1px;
   line-height: 1.1em;
+
+  @media (max-width: 900px) {
+    font-size: 50px;
+  }
 `
 
 const Sparagraph = styled.p`

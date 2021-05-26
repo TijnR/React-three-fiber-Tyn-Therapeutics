@@ -10,6 +10,10 @@ import abbvie from '../images/abbvie.png'
 const Sbanner = styled.section`
   padding: 75px 40px;
   background-color: ${colors.primary};
+
+  @media (max-width: 900px) {
+    padding: 50px 20px;
+  }
 `
 
 const Sinner = styled.div`

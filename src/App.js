@@ -4,14 +4,6 @@ import Section from './components/Section.js'
 import Navigation from './components/Navigation'
 import ContentBlock from './components/ContentBlock'
 
-import { Canvas, useFrame } from '@react-three/fiber'
-import {
-  softShadows,
-  MeshWobbleMaterial,
-  OrbitControls,
-} from '@react-three/drei'
-import { useSpring, a } from 'react-spring/three'
-
 import Banner from './components/Banner'
 import CanvasContainer from './components/CanvasContainer'
 import DnaCanvas from './components/DnaCanvas'

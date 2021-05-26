@@ -11,6 +11,10 @@ function Section({ children, bgcolor, align }) {
     padding: 200px 40px;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 900px) {
+      padding: 120px 20px;
+    }
   `
 
   const SInner = styled.div`
