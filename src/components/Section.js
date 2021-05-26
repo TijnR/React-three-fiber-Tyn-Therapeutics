@@ -4,6 +4,7 @@ import { colors } from '../theme/theme'
 
 function Section({ children, bgcolor, align }) {
   const SContainer = styled.section`
+    position: relative;
     height: 100vh;
     width: 100%;
     background-color: ${bgcolor || '#ffffff'};

@@ -15,6 +15,7 @@ import { useSpring, a } from 'react-spring/three'
 import Banner from './components/Banner'
 import CanvasContainer from './components/CanvasContainer'
 import DnaCanvas from './components/DnaCanvas'
+import EngineCanvas from './components/EngineCanvas'
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
       </Section>
       <Banner />
       <Section align bgcolor="#F4F4F4">
+        <CanvasContainer>
+          <EngineCanvas />
+        </CanvasContainer>
         <ContentBlock
           subTitle="02 - our Approach"
           title="The engine of drug discovery has arrived"
