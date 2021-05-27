@@ -22,10 +22,6 @@ const SbuttonLabel = styled.span`
   text-decoration: none;
   text-decoration-line: none;
   text-decoration-style: none;
-
-  :visited {
-    text-decoration: none;
-  }
 `
 const SiconContainer = styled.div`
   width: 25px;
@@ -41,7 +37,7 @@ const SiconContainer = styled.div`
 function Button() {
   return (
     <a
-      style={{ display: 'inline-block' }}
+      style={{ display: 'inline-block', textDecoration: 'none' }}
       href={'https://nl.linkedin.com/in/tijn-roozen'}
     >
       <Sbutton>

@@ -13,17 +13,24 @@ import { useFrame } from '@react-three/fiber'
 import { useSpring, a } from 'react-spring/three'
 
 export default function HelixModel(props) {
-  const [colored, setColored] = useState(false)
+  const [slowing, setSlowing] = useState(false)
 
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF(
-    '/models/dna_helix/scene.gltf'
-  )
-  const { actions } = useAnimations(animations, group)
+  const { nodes } = useGLTF('/models/dna_helix/scene.gltf')
 
-  useFrame((state) => {
-    group.current.rotation.y += 0.01
+  let rotateSpeed = 0.01
+
+  useFrame((state, delta) => {
+    group.current.rotation.y += rotateSpeed
+
+    if (slowing && rotateSpeed > 0) {
+      rotateSpeed -= 0.0001
+    }
   })
+
+  const handleMouseEvent = (e) => {
+    console.log('bruh')
+  }
 
   const basic = (
     <meshStandardMaterial
@@ -41,6 +48,9 @@ export default function HelixModel(props) {
       dispose={null}
       scale={[0.1, 0.1, 0.1]}
       position={[5, 0, 0]}
+      // onClick={() => setColored(!colored)}
+      onPointerOver={() => setSlowing(true)}
+      onPointerOut={() => setSlowing(false)}
     >
       <group rotation={[-Math.PI * 0.5, 0, 0]}>
         <group rotation={[Math.PI * 0.5, 0, 0]}>
@@ -54,15 +64,10 @@ export default function HelixModel(props) {
               />
             </a.mesh>
           </group>
-          <group
-            name="helixcell"
-            rotation={[-Math.PI / 2, 0, 0]}
-            onClick={() => setColored(!colored)}
-          >
+          <group name="helixcell" rotation={[-Math.PI / 2, 0, 0]}>
             <a.mesh geometry={nodes['helixcell_Material_#26_0'].geometry}>
               <meshStandardMaterial
                 attach="material"
-                color={colored ? 'red' : 'white'}
                 transparent
                 roughness={0.1}
                 metalness={0.1}
