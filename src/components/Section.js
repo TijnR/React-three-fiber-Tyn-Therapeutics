@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { colors } from '../theme/theme'
 
 function Section({ children, bgcolor, align }) {
   const SContainer = styled.section`

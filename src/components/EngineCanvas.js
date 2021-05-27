@@ -1,31 +1,6 @@
-import React, { useState, useRef, Suspense } from 'react'
-import * as THREE from 'three'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { Canvas, useFrame, useLoader } from '@react-three/fiber'
-import {
-  softShadows,
-  MeshWobbleMaterial,
-  OrbitControls,
-} from '@react-three/drei'
-import { useSpring, a } from 'react-spring/three'
-import { MeshBasicMaterial } from 'three'
+import React, { Suspense } from 'react'
+import { Canvas } from '@react-three/fiber'
 import EngineModel from './EngineModel'
-
-function Loading() {
-  return (
-    <mesh visible position={[0, 0, 0]} rotation={[0, 0, 0]}>
-      <sphereGeometry attach="geometry" args={[1, 16, 16]} />
-      <meshStandardMaterial
-        attach="material"
-        color="white"
-        transparent
-        opacity={0.6}
-        roughness={1}
-        metalness={0}
-      />
-    </mesh>
-  )
-}
 
 function EngineCanvas() {
   return (

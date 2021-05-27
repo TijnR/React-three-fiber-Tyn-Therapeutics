@@ -15,7 +15,7 @@ export default function EngineModel(props) {
   const [expand, setExpand] = useState(false)
 
   const group = useRef()
-  const { nodes, materials } = useGLTF('models/engine/scene.gltf')
+  const { nodes } = useGLTF('models/engine/scene.gltf')
   const lego1 = useRef()
   const lego2 = useRef()
   const lego3 = useRef()
@@ -27,7 +27,7 @@ export default function EngineModel(props) {
     scale: expand ? [1.4, 1.4, 1.4] : [1, 1, 1],
   })
 
-  useFrame((state) => {
+  useFrame(() => {
     if (expand) {
       lego1.current.rotation.z -= 0.009
       lego2.current.rotation.z -= 0.003

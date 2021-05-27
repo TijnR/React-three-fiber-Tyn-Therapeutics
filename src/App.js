@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React from 'react'
 import './App.css'
 import Section from './components/Section.js'
 import Navigation from './components/Navigation'
