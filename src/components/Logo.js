@@ -10,8 +10,13 @@ const ImageContainer = styled.div`
 
 export const Logo = () => {
   return (
-    <ImageContainer>
-      <ReactLogo />
-    </ImageContainer>
+    <a
+      style={{ display: 'inline-block', textDecoration: 'none' }}
+      href={'https://nl.linkedin.com/in/tijn-roozen'}
+    >
+      <ImageContainer>
+        <ReactLogo />
+      </ImageContainer>
+    </a>
   )
 }
