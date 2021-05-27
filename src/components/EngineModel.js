@@ -6,11 +6,14 @@ source: https://sketchfab.com/3d-models/build-inktober-5th-ead77564d5e94b28bdcfb
 title: Build - Inktober 5th
 */
 
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import { useSpring, a } from 'react-spring/three'
 
 export default function EngineModel(props) {
+  const [expand, setExpand] = useState(false)
+
   const group = useRef()
   const { nodes, materials } = useGLTF('models/engine/scene.gltf')
   const lego1 = useRef()
@@ -20,10 +23,20 @@ export default function EngineModel(props) {
   const piece2 = useRef()
   const piece3 = useRef()
 
+  const animate = useSpring({
+    scale: expand ? [1.4, 1.4, 1.4] : [1, 1, 1],
+  })
+
   useFrame((state) => {
-    lego1.current.rotation.z -= 0.003
-    lego2.current.rotation.z -= 0.001
-    lego3.current.rotation.z -= 0.002
+    if (expand) {
+      lego1.current.rotation.z -= 0.009
+      lego2.current.rotation.z -= 0.003
+      lego3.current.rotation.z -= 0.006
+    } else {
+      lego1.current.rotation.z -= 0.003
+      lego2.current.rotation.z -= 0.001
+      lego3.current.rotation.z -= 0.002
+    }
 
     piece1.current.rotation.y -= 0.002
     piece2.current.rotation.y -= 0.002
@@ -146,8 +159,11 @@ export default function EngineModel(props) {
             position={[0, 0, 0]}
             rotation={[-2.85, 0.46, 0.8]}
             scale={[100, 100, 100]}
+            onPointerOver={() => setExpand(true)}
+            onPointerOut={() => setExpand(false)}
           >
-            <mesh
+            <a.mesh
+              scale={animate.scale}
               geometry={nodes.Cube021_Lego_0.geometry}
               material={nodes.Cube021_Lego_0.material}
             />
